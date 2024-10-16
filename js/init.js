@@ -1,10 +1,7 @@
 $(document).ready(function () {
 
-  $('#modal1').modal();
-  $('#modal2').modal();
-  $('#modal3').modal();
-  $('#modal4').modal();
-  $('#modal5').modal();
+  $('#modalProgressiva').modal();
+  $('#modalRegressiva').modal();
   $('.collapsible').collapsible();
 
   $('.datepicker').datepicker({
@@ -27,6 +24,4 @@ $(document).ready(function () {
       clear: 'Limpar'
     }
   });
-
-
 });
