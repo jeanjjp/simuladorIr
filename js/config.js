@@ -77,6 +77,9 @@ class Config {
             var contribAtual = arrayContrib[i];
             var idadeParcela = this.calcularIdadeParcela(contribAtual.data, this.hoje);
 
+            contribAtual.valor = parseFloat(contribAtual.valor);
+            rendaMensal = parseFloat(rendaMensal);
+
             for (let index = 0; index < this.faixasRegressiva.length; index++) {
                 var faixa = this.faixasRegressiva[index];
 
