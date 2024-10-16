@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>IR</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <ul class="collapsible  grey lighten-5">
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">fast_forward</i>
+            Progressiva
+          </div>
+          <div class="collapsible-body">
+
+            <!--Form-->
+            <div class="row">
+              <form>
+                <div class="row">
+                  <div class="col s12">
+                    <h5>Rendimentos</h5>
+                  </div>
+
+                  <div class="input-field col s10">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input id="rendaMensal" type="number">
+                    <label for="rendaMensal">Renda Mensal</label>
+                  </div>
+
+                  <div class="col s2">
+                    <a class="waves-effect waves-light btn-small btn-floating  modal-trigger" href="#modal1"><i
+                        class="material-icons left">help</i></a>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                      <div class="modal-content">
+                        <h4>Renda Mensal</h4>
+                        <p>Insira o valor bruto da renda mensal que será utilizado para calcular o valor do imposto
+                          de
+                          renda.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-small">Ok</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col s12">
+                    <h5>Deduções</h5>
+                  </div>
+
+                  <div class="input-field col s10 m2">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="quantidadeDependentes" type="number" class="validate">
+                    <label for="quantidadeDependentes">Dependentes</label>
+                  </div>
+                  <div class="col s2">
+                    <a class="waves-effect waves-light btn-small btn-floating  modal-trigger" href="#modal2"><i
+                        class="material-icons left">help</i></a>
+                    <!-- Modal Structure -->
+                    <div id="modal2" class="modal">
+                      <div class="modal-content">
+                        <h4>Dependentes</h4>
+                        <p>Insira a quantidade de dependentes. O valor da dedução é R$ 189,59 mensais, por
+                          dependente.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-small">Ok</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col s10 m2">
+                    <p>
+                      <label>
+                        <input type="checkbox" id="descontoSimplificado" checked="checked" disabled="disabled" />
+                        <span>Desconto Simplificado</span>
+                      </label>
+                    </p>
+                  </div>
+                  <div class="col s2">
+                    <a class="waves-effect waves-light btn-small btn-floating  modal-trigger" href="#modal3"><i
+                        class="material-icons left">help</i></a>
+                    <!-- Modal Structure -->
+                    <div id="modal3" class="modal">
+                      <div class="modal-content">
+                        <h4>Desconto Simplificado</h4>
+                        <p>Essa opção aplica um desconto padrão de 20% sobre os rendimentos recebidos limitado a um
+                          valor tabelado anualmente. Neste caso, as despesas declaradas não são utilizadas para
+                          gerar
+                          desconto.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-small">Ok</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col s10 m2">
+                    <p>
+                      <label>
+                        <input type="checkbox" id="descontoIdade" />
+                        <span>Desconto Idade</span>
+                      </label>
+                    </p>
+                  </div>
+                  <div class="col s2">
+                    <a class="waves-effect waves-light btn-small btn-floating  modal-trigger" href="#modal4"><i
+                        class="material-icons left">help</i></a>
+                    <!-- Modal Structure -->
+                    <div id="modal4" class="modal">
+                      <div class="modal-content">
+                        <h4>Desconto Idade</h4>
+                        <p>De acordo com a Instrução Normativa RFB nº 1.500/2014, são isentos ou não se sujeitam ao
+                          imposto sobre a renda os provenientes de aposentadoria e pensão, de transferência para a
+                          reserva remunerada ou de reforma pagos pela Previdência Social da União,
+                          dos estados, do Distrito Federal e dos municípios, por qualquer pessoa jurídica de direito
+                          público interno ou por entidade de previdência complementar, a partir do mês em que o
+                          contribuinte completar 65 (sessenta e cinco) anos de idade, até o valor mensal
+                          de R$1.903,98, aplicando-se as tabelas progressivas do Anexo II sobre o valor excedente.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-small">Ok</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col s1 offset-s3">
+                      <br /><br /><br />
+                      <a class="waves-effect waves-light btn-small center-align" id="calcularProgressiva">Calcular</a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col s12">
+                    <h5>Deduções</h5>
+                  </div>
+
+                  <div class="col s12 m6">
+                    <p><b>Base Cálculo Padrão</b></p>
+                    <table class="striped">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th>R$</th>
+                          <th>Operação</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>Renda Bruta:</td>
+                          <td id="valorBruto"></td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>Valor Total Dependentes:</td>
+                          <td id="valorTotalDependentes"></td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>Desconto Idade:</td>
+                          <td id="valorDescontoIdade"></td>
+                          <td>=</td>
+                        </tr>
+                        <tr>
+                          <td>Base Cálculo:</td>
+                          <td id="valorBaseCalculoPadrao"></td>
+                          <td>=</td>
+                        </tr>
+                        <tr>
+                          <td>Valor IR</td>
+                          <td id="valorIrPadrao"></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="col s12 m6">
+                    <p><b>Base Cálculo Simplificado</b></p>
+                    <table class="striped">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th>R$</th>
+                          <th>Operação</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>Renda Bruta:</td>
+                          <td id="valorBrutoSimplificado"></td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>Desconto Simplificado:</td>
+                          <td id="valorDescontoSimplificado"></td>
+                          <td>=</td>
+                        </tr>
+                        <td>Base Cálculo:</td>
+                        <td id="valorBaseCalculoSimplificado"></td>
+                        <td>=</td>
+                        </tr>
+                        <tr>
+                          <td>Valor IR</td>
+                          <td id="valorIrSimplificado"></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">fast_rewind</i>Regressiva</div>
+          <div class="collapsible-body">
+            <div class="row">
+
+              <div class="col s12">
+                <a class="waves-effect waves-light btn-small btn-floating  modal-trigger" href="#modal5"><i
+                    class="material-icons left">help</i>
+                </a>
+                <!-- Modal Structure -->
+                <div id="modal5" class="modal">
+                  <div class="modal-content">
+                    <h4>Histórico de Contribuições</h4>
+                    <p>Para calcular o imposto de renda na Regressiva é preciso cadastrar contribuições contendo a
+                      data em que a contribuição foi paga e o valor pago, onde a soma de todos os valores seja no
+                      mínimo igual ao valor da renda burta.
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-small">Ok</a>
+                  </div>
+                </div>
+              </div>
+
+              <form>
+
+                <div class="row">
+                  <div class="col s12">
+                    <h5>Rendimentos</h5>
+                  </div>
+
+                  <div class="input-field col s10">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input id="rendaMensalRegressiva" type="number">
+                    <label for="rendaMensalRegressiva">Renda Mensal</label>
+                  </div>
+
+                  <div class="col s12 m4">
+                    <h5>Histórico de Contribuições</h5>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s6 m2">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input id="valorContrib" type="number">
+                    <label for="valorContrib">Valor</label>
+                  </div>
+
+                  <div class="input-field col s6 m2">
+                    <i class="material-icons prefix">date_range</i>
+                    <input id="dataContrib" type="text" class="datepicker">
+                    <label for="dataContrib">Data</label>
+                  </div>
+
+                  <div class="col s12 m2 ">
+                    <a class="waves-effect waves-light btn-small center-align" id="cadastrarContrib">Cadastrar</a>
+                  </div>
+
+                  <div class="col s12 m6 ">
+                    <a class="waves-effect waves-light btn-small center-align disabled">Importar Arquivo</a>
+                  </div>
+
+                  <div class="col s12">
+                    <p><b>Contribuições</b></p>
+                    <table class="striped" id="tabelaContrib">
+                      <thead>
+                        <tr>
+                          <th>Data:</th>
+                          <th>R$:</th>
+                          <th>Excluir:</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </form>
+              <div class="col s1 offset-s4">
+                <a class="waves-effect waves-light btn-small center-align" id="calcularRegressiva">Calcular</a>
+              </div>
+
+              <form>
+                <div class="row">
+                  <div class="col s12">
+                    <h5>Resultado</h5>
+                    <table id="tabelaResultRegressiva">
+                      <thead>
+                        <tr>
+                          <th>Data:</th>
+                          <th>Idade:</th>
+                          <th>IR R$:</th>
+                          <th>Consumo:</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+              </form>
+
+              <div class="col s3 m1">
+                <p class="right-align"><b>Total IR R$:</b></p>
+
+              </div>
+              <div class="col s3 m1">
+                <p class="left-align" id="totalIrRegressiva"></p>
+              </div>
+            </div>
+
+          </div>
+
+    </div>
+    </li>
+    </ul>
+  </div>
+
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/calcularIr.js"></script>
+  <script src="js/listaContrib.js"></script>
+</body>
+
+</html>
